@@ -40,3 +40,8 @@ console.log(timestamp); //number
 timestamp = new Date();
 console.log(timestamp.getTime());   //number
 console.log(timestamp.toISOString());
+//string to number
+let str= '59.90';
+console.log(Number(str)+4);
+str = 'str';
+console.log(Number(str)+4);
