@@ -42,6 +42,53 @@ int main()
             vector<int> v(10);
             v[5] = res;
             cout << "Success!\n";
+        6.
+        error: no match for call to ‘(std::vector<int>) (int)
+            vector<int> v(10);
+            v(5) = 7;
+            if (v(5) != 7)
+            cout << "Success!\n";
+        correction:
+            vector<int> v(10);
+            v[5] = 7;
+            if (v[5] == 7)
+            cout << "Success!\n";
+        7.
+        error:‘cond’ was not declared in this scope
+            if (cond)
+                cout << "Success!\n";
+            else
+                cout << "Fail!\n";
+        correction:
+            int cont = 10;
+            if (cond)
+                cout << "Success!\n";
+            else
+                cout << "Fail!\n";
+        8.
+        error: Logical error
+            bool c = false;
+            if (c)
+                cout << "Success!\n";
+            else
+                cout << "Fail!\n";
+        correction:
+            bool c = true;
+            if (c)
+                cout << "Success!\n";
+            else
+                cout << "Fail!\n";
+        9.
+        error:
+            string s = "ape";
+            boo c = "fool" < s;
+            if (c)
+                cout << "Success!\n";
+        correction:
+            string s = "ape";
+            bool c = "fool" > s;
+            if (c)
+                cout << "Success!\n";
         */
 
         //keep_window_open();
