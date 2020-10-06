@@ -87,7 +87,25 @@ int main()
         correction:
             string s = "ape";
             bool c = "fool" > s;
-            if (c)
+            if (c)      
+                cout << "Success!\n";
+        10.
+        error: Logical error
+            string s = "ape";
+            if (s == "fool")
+                cout << "Success!\n";
+        correction:
+            string s = "ape";
+            if (s != "fool")
+                cout << "Success!\n";
+        11.
+        error: Logical and Syantax error
+            string s = "ape"; 
+            if (s=="fool") 
+                cout < "Success!\n";
+        correction
+            string s = "ape";
+            if (s != "fool")
                 cout << "Success!\n";
         */
 
