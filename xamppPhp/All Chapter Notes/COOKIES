@@ -1,0 +1,42 @@
+Cookies - These are text files stored on the client computer and they are kept of use tracking purpose.
+
+There are three steps involved in identifying returning users −
+
+    Server script sends a set of cookies to the browser.
+        For example name, age, or identification number etc.
+
+    Browser stores this information on local machine for future use.
+
+    When next time browser sends any request to web server then it sends those cookies 
+        information to the server and server uses that information to identify the user.
+
+Setting Cookies with PHP-
+    setcookie()-
+        function to set a cookie.
+        This function requires upto seven arguments and should be called before <html> tag.
+        For each cookie this function has to be called separately.
+    syntax- 
+        setcookie(name, value, expire, path, domain, security);            
+            Arguments-
+                >name - The name of the cookie.
+                >value- The value of the cookie. 
+                        This value is stored on the clients computer; do not store sensitive information.
+                >expires- The time the cookie expires.
+                           This is a Unix timestamp so is in number of seconds since the epoch.
+                           example - time()+(7*24*60*60) [1 week]
+                >path- The path on the server in which the cookie will be available on. 
+                        If set to '/', the cookie will be available within the entire domain.
+                > domain- The (sub)domain that the cookie is available to. 
+                > secure- Indicates that the cookie should only be transmitted over a secure HTTPS connection from the client.
+                            When set to TRUE, the cookie will only be set if a secure connection exists. 
+                > httponly- When TRUE the cookie will be made accessible only through the HTTP protocol.
+                             This means that the cookie won't be accessible by scripting languages, such as JavaScript.
+
+    Return Value-
+        If setcookie() successfully runs, it will return TRUE,setcookie() will fail and return FALSE.
+
+Accessing Cookies- PHP provides many ways to access cookies. Simplest way is to use either $_COOKIE or $HTTP_COOKIE_VARS variables.
+    syntax-
+        $_COOKIE["string name..."]
+
+Deleting Cookie - set the cookie with a date that has already expired such as time()-60;

@@ -1,0 +1,12 @@
+MySQL Terminology-
+    >Connector- 
+        -The term connector refers to a piece of software that allows your application to connect to the 
+            MySQL database server.
+    >Driver-
+        -A driver is a piece of software designed to communicate with a specific type of database server.
+            The driver may also call a library, such as the MySQL Client Library or the MySQL Native Driver.
+            These libraries implement the low-level protocol used to communicate with the MySQL database server.
+    
+    >Extension-
+        -An extension typically exposes an API to the PHP programmer, to allow its facilities to be used programmatically.
+            However, some extensions which use the PHP extension framework do not expose an API to the PHP programmer.

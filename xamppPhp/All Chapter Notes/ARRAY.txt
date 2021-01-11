@@ -1,0 +1,66 @@
+
+Array-
+    >An array in PHP is actually an ordered map. A map is a type that associates values to keys.
+        This type is optimized for several different uses;it can be treated as an array, list (vector), hash table, etc.
+    >Syntax
+        $arr[key] = value; => if array doesn't exists.
+        array(
+            key  => value,
+            key2 => value2,
+            key3 => value3,
+            ...
+        )
+        -A short array syntax exists which replaces array() with [].
+            [
+                key  => value,
+                key2 => value2,
+                key3 => value3,
+                ...
+            ]        
+        -The comma after the last array element is optional and can be omitted.
+        -The key can either be an int or a string. The value can be of any type.
+        -Strings containing valid decimal ints, unless the number is preceded by a + sign or other, will be cast to the int type.
+        -If multiple elements in the array declaration use the same key, only the 
+            last one will be used as all others are overwritten.
+        -The key is optional.Index starts from 0 and incremented.
+        -If multiple elements in the array declaration use the same key, only the last
+            one will be used as all others are overwritten. 
+        -PHP arrays can contain int and string keys at the same time.
+        -It is possible to specify the key only for some elements and leave it out for others.
+        -Always use quotes around a string literal or expression as array index,if not defined named then PHP will 
+            substitute in the string of the given name and use that. 
+    >Accessing array elements
+        -Using default index value if no key is provided,else use key value is specified.
+        -using [] or {} to access elements.
+    >Removing elements
+        -To remove a key/value pair, call the unset() function on it.
+    >Adding elements
+        -Using [], then key is incremented from largest key value.
+        -Using ['key'],specifing the key.
+    >Inspecting elements
+        -print_r — Prints human-readable information about a variable.
+            returns-
+                If given a string, int or float, the value itself will be printed.
+                 If given an array, values will be presented in a format that shows keys and elements.
+                 Similar notation is used for objects.
+    >Iterating Array
+        -each()- Return the current key and value pair from an array and advance the array cursor.
+            >After each() has executed, the array cursor will be left on the next element of the array,
+                or past the last element if it hits the end of the array.
+            >Return value
+                -Returns the current key and value pair from the array.
+                -This pair is returned in a four-element array, with the keys '0', '1', 'key', and 'value'.
+                -Elements '0' and 'key' contain the key name of the array element, and '1' and 'value contain the data.
+                -If the internal pointer for the array points past the end of the array contents, each() returns FALSE.
+            
+        -foreach()
+            >foreach construct provides an easy way to iterate over arrays.
+            >foreach works only on arrays and objects, and will issue an error when you try to use it on a variable 
+             with a different data type or an uninitialized variable.
+            >Two syntaxes:
+                foreach (iterable_expression as $value) // On each iteration, the value of the current element is assigned to $value.
+                    ...
+                foreach (iterable_expression as $key => $value) // Additionally assign the current element's key to the $key variable on each iteration.
+                    ...
+            >In order to be able to directly modify array elements within the loop precede $value with &.
+            >Reference of a $value and the last array element remain even after the foreach loop. It is recommended to destroy it by unset(). 

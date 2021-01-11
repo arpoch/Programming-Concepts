@@ -1,0 +1,67 @@
+String - A string is series of characters, where a character is the same as a byte. 
+         This means that PHP only supports a 256-character set, and hence does not offer native Unicode support.
+
+Types-
+    Single quoted-
+        >The simplest way to specify a string is to enclose it in single quotes i.e. ' '
+        >The backslash(\) is used only for printing ' and \ but cannot be used for escape sequences
+
+    Double quoted-
+        >If the string is enclosed in double-quotes (").
+        >Escape sequences can be used and variable name can be expanded.
+    
+    Heredoc-
+        >syntax: 
+            <<<. After this operator, an identifier is provided, then a newline.
+            The string itself follows, and then the same identifier again to close the quotation.
+        >The closing identifier must begin in the first column of the line.
+        >Identifier: it must contain only alphanumeric characters and underscores.
+        >A semicolon in last.
+        >Heredocs containing variables can not be used for initializing class properties.
+        >They are especially useful when we need to define a string that spans multiple lines 
+
+    Nowdoc-
+        >A nowdoc is identified with the same <<< sequence used for heredocs,
+         but the identifier which follows is enclosed in single quotes, e.g. <<<'EOT'.
+        >A nowdoc is specified similarly to a heredoc, but no parsing is done inside a nowdoc.
+    
+    Variable parsing-When a string is specified in double quotes or with heredoc, variables are parsed within it.
+        >Simple
+            -If a dollar sign ($) is encountered,
+                the parser will greedily take as many tokens as possible to form a valid variable name.
+            -Enclose the variable name in curly braces to explicitly specify the end of the name.
+            -Similarly, an array index or an object property can be parsed.
+        >Complex (curly) syntax
+            -syntax
+                {$'expression'}
+            -Simply write the expression the same way as it would appear outside the string, and then wrap it in { and }.
+                ,this syntax will only be recognised when the $ immediately follows the {.
+            -Any scalar variable, array element or object property with a string representation can be included via this syntax.
+        -(IMPORTANT NOTE)
+            >Using single curly braces ({}) will not work for accessing the return values of functions or methods or
+                the values of class constants or static class variables.
+
+        >String access and modification by character
+            -Characters within strings may be accessed and modified by specifying the zero-based offset
+                of the desired character after the string using square array brackets.
+            -As of PHP 7.1.0, applying the empty index operator on an empty string throws a fatal error.
+            -Characters within string literals can be accessed using [] or {}- it is deprecated in 7.4 and removed in 8.0.
+
+        >Functions and Operators
+            -String Operators
+                >Two string operator
+                    -The first is the concatenation operator ('.'), which returns the concatenation of its 
+                        right and left arguments.
+                    -The second is the concatenating assignment operator ('.='), which appends the argument on
+                        the right side to the argument on the left side.
+            
+            -String Functions
+                >ltrim - Strip whitespace (or other characters) from the beginning of a string.
+                    -syntax
+                        ltrim ( string $str [, string $character_mask ] ) : string
+
+                >Formatting String
+                    -printf
+                        >syntax
+                            printf ( string $format , mixed ...$values ) : int
+                        

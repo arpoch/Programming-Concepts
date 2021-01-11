@@ -1,0 +1,41 @@
+PHP file permissions-
+    >File permissions specify what you can do with a particular file in the system e.g., reading, writing or executing the file.
+
+PHP checking file permissions-
+    >is_readable() returns true if you are allowed to read the file, otherwise returns false.
+    >is_writable() returns true if you are allowed to write the file, otherwise returns false.
+    >is_executable() returns true if you are allowed to execute the file, otherwise returns false.
+    >fileperms() function that returns an integer, which represents the permissions that are set on a particular file.
+
+PHP changing file permissions-
+
+    >To change the file permissions, or mode, you use chmod() function.
+    >Syntax-
+        chmod ( string $filename , int $mode ) : bool[Returns TRUE on success or FALSE on failure.]
+    >Note that mode is not automatically assumed to be an octal value, so to ensure the expected operation, you need to prefix mode with a zero (0).
+    >modes - read = 4, write = 2, execute =1
+
+File Handling
+
+    Open file-
+        >fopen() function is used to open a file.
+            Syntax-
+                > fopen ( string $filename , string $mode [, bool $use_include_path = false [, resource $context ]] )            
+            >Returns a file pointer resource on success, or FALSE on failure.
+            Modes-
+                'r' - Open for reading only; place the file pointer at the beginning of the file.
+                'r+' - Open for reading and writing; place the file pointer at the beginning of the file.
+                'w' - Open for writing only; place the file pointer at the beginning of the file and truncate the file to zero length. If the file does not exist, attempt to create it.
+                'w+' - Open for reading and writing; place the file pointer at the beginning of the file and truncate the file to zero length. If the file does not exist, attempt to create it. 
+    Close file-
+        >fclose() - Closes an open file pointer
+        Syntax-
+            fclose ( resource $handle ) : bool
+        >Returns TRUE on success or FALSE on failure.
+
+    Deletes file-
+        >unlink() - To delete a file
+        Syntax-
+            unlink ( string $filename [, resource $context ] ) : bool
+        > Returns TRUE on success or FALSE on failure. 
+    

@@ -1,0 +1,80 @@
+The <form> tag is used to create an HTML form for user input.
+    Syntax-
+        <form></form>
+    Attributes-
+        Name        Value       Des
+        action      URL         Specifies where to send the form-data when a form is submitted.
+        method      get/post    Specifies the HTTP method to use when sending form-data.
+        name 	    text 	    Specifies the name of a form
+Other tags used in form-
+        1.<input> tag - specifies an input field where the user can enter data.
+            attributes
+                'Name'        'Value'                   'Des'
+                type        button,text,            Type of value
+                            password,number,
+                            etc
+                autofocus 	autofocus 	            Specifies that an <input> element should 
+                                                     automatically get focus when the page loads
+
+                value 	    text 	                Specifies the value of an <input> element
+                
+                id          String                  Associate the text area with a label
+                
+                name 	    text 	                Specifies the name of an <input> element
+                
+                required                            When present, it specifies that an input field 
+                                                     must be filled out before submitting the form.
+
+        2.<textarea> tag - A multi-line text input control (text area).
+            attributes
+                Name          Value             Des      
+                <cols>        number         columns of the textbox.
+                <rows>        number         rows of textbox.
+                name          String         reference the form data after the form is submitted.
+                id            String         associate the text area with a label.
+        3.<span> tag is an inline container used to mark up a part of a text, or a part of a document
+Super Global Variables[GET & POST]/Importing User Data-
+    >Superglobals are built-in variables that are always available in all scopes.
+    >This simply means that it is available in all scopes throughout a script.
+        There is no need to do global $variable; to access it within functions or methods.
+
+    >$_GET - HTTP GET variables
+        -An associative array of variables passed to the current script via the
+        -URL parameters (aka. query string).
+        -An array of variables passed to the current script via the URL parameters
+    >$_POST - HTTP POST variables
+        -An associative array of variables passed to the current script via the HTTP POST
+          method when using application/x-www-form-urlencoded or multipart/form-data as the HTTP Content-Type in the request.
+        -An array of variables passed to the current script via the HTTP POST method.
+    >Both GET and POST create an array (e.g. array( key1 => value1, key2 => value2, key3 => value3, ...)).
+        This array holds key/value pairs, where keys are the names of the form controls and values are the input data from the user.
+    >Both GET and POST are treated as $_GET and $_POST. These are superglobals, which means that they are 
+        always accessible, regardless of scope - and you can access them from any function, class or file 
+        without having to do anything special.
+    >When to use _GET
+        -Information sent from a form with the GET method is visible to everyone (all variable names and values 
+            are displayed in the URL). GET also has limits on the amount of information to send. 
+            The limitation is about 2000 characters.
+    >When to use POST?
+        -Information sent from a form with the POST method is invisible to others (all names/values are embedded within the body 
+            of the HTTP request) and has no limits on the amount of information to send.
+
+Other Super Globals-
+    >$GLOBALS — References all variables available in global scope.
+        -An associative array containing references to all variables which are currently defined in the global scope of the script.
+            The variable names are the keys of the array.
+    >$_SERVER — Server and execution environment information.
+        -An array containing information such as headers, paths, and script locations.
+            The entries in this array are created by the web server.
+        -PHP_SELF,GATEWAY_INTERFACE,SERVER_ADDR,SERVER_NAME,REQUEST_METHOD.etc
+        -Syntax
+            $_SERVER['PHP_SELF'] -It returns the filename of the currently executing script.
+            $_SERVER['REQUEST_METHOD']- Return IP address of the server under which the current script is executing. 
+    >$_REQUEST- It's used to collect data after submitting an HTML form.
+        -Syntax
+            $_REQUEST['key_name'];
+
+Form Validation-
+    >Strip unnecessary characters (extra space, tab, newline) from the user input data (with the PHP trim() function)
+    >Remove backslashes (\) from the user input data (with the PHP stripslashes() function)
+    >Pass all variables through PHP's htmlspecialchars() function.

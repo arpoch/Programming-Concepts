@@ -1,0 +1,74 @@
+$User-Defined Function
+    Syntax and Rules
+        function fun-name($arg1,$arg2,/*aguments*/){
+            return $retval;
+        }
+        -Any valid PHP code may appear inside a function, even other functions and class definitions.
+        -A valid function name starts with a letter or underscore, followed by any number of letters, numbers, or underscores.
+        -Function need not to be defined/declared before calling thus if function then it will be
+         called except when a function is conditionally i.i within another function or control structure.
+        -All functions and classes in PHP have the global scope.
+        -PHP does not support function overloading.
+        -It is possible to call recursive functions in PHP. 
+
+    Arguments
+        -Information may be passed to functions via the argument list, which is a comma-delimited list of expressions.
+        -The arguments are evaluated from left to right.
+        >Type
+            -by value (the default, so that if the value of the argument within the function is changed, it does not 
+                        get changed outside of the function)
+            -by reference
+                -To have an argument to a function always passed by reference, prepend an ampersand (&) to the argument name in the function definition
+            -Default argument values
+                -A function may define C++-style default values for scalar arguments.
+                -PHP also allows the use of arrays and the special type NULL as default values.
+                -The default value must be a constant expression.
+                -Any defaults should be on the right side of any non-default arguments; otherwise, things will not work as expected.
+        >Variable-length argument lists
+            -PHP has support for variable-length argument lists in user-defined functions by using the ... token.
+            -The arguments will be passed into the given variable as an array.
+            -It is also possible to add a type declaration before the ... token.
+        >Return value
+            -Values are returned by using the optional return statement. Any type may be returned, including arrays and objects.
+                This causes the function to end its execution immediately and pass control back to the line from which it was called.
+            -If the return is omitted the value NULL will be returned.
+            -To return a reference from a function, use the reference operator & in both the function declaration and when
+                assigning the returned value to a variable.
+            -return type declaration
+                syntax
+                    -function func-name(arguments...) : type {}
+                    -type can be int,floatobject
+        >Strict typing
+            -It is possible to enable strict mode on a per-file basis.
+            -In strict mode, only a variable of exact type of the type declaration will be accepted, or a TypeError will be thrown.
+            -To enable strict mode, the declare statement is used with the strict_types declaration.
+            -Strict typing is only defined for scalar type declarations. 
+                syntax
+                    declare(strict_types=1)
+        >PHP Built-in Functions -PHP has over 1000 built-in functions that can be called directly, from within a script, to perform a specific task.
+            -empty($variable) - Check whether a variable is empty.
+            -isset($variable) - Determine if a variable is declared and is different than NULL.
+            -unset()- Destroys the specified variables.
+                      >The behavior of unset() inside of a function can vary depending on what type of 
+                       variable you are attempting to destroy.
+            -trim — Strip whitespace (or other characters) from the beginning and end of a string.
+                >syntax
+                    trim(string,character_mask);
+                    -string=The string to trim.
+                    -character_mask = characters to delete
+                    -if no character_mask is given then  " ","\t","\n","\r","\0","\x0B" are removed.
+            -stripslashes — Returns a string with backslashes stripped off.
+            -htmlspecialchars()- It converts special characters to HTML entities. 
+                >This means that it will replace HTML characters like < and > with &lt; and &gt;.
+                >Returns the converted string. 
+            -preg_match()- searches a string for pattern, returning true if the pattern exists, and false otherwise.
+                >syntax
+                    preg_match(pattern, input, matches, flags, offset);
+                        pattern-Contains a regular expression indicating what to search for.
+                        input-The string in which the search will be performed.
+                        matches-The variable used in this parameter will be populated with an array containing all of the matches that were found.
+                >Returns 1 if the pattern matches given subject, 0 if it does not, or FALSE if an error occurred.
+            -filter_var() — Filters a variable with a specified filter.
+                >syntax
+                    filter_var(mixed $variable, int $filter = FILTER_DEFAULT, mixed $options);
+                >Returns the filtered data, or FALSE if the filter fails. 

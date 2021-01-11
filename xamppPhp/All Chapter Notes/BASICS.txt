@@ -1,0 +1,93 @@
+Note
+{
+  -Variable handling Functions
+   ->isset()= language construct can be used to detect if a variable has been already initialized.
+  -Predefined Variables - PHP provides a large number of predefined variables to all scripts.
+  -We use <br> if using web-server for php and \n if using php interpreter.
+  -Recursive function/method calls with over 100-200 recursion levels can smash the stack and cause a
+    termination of the current script. Especially, infinite recursion is considered a programming error. 
+}
+Syntax-
+        -PHP requires instructions to be terminated with a semicolon at the end of each statement. 
+        -The closing tag of a block of PHP code automatically implies a semicolon;
+        -PHP parser which allows PHP files to have mixed content.This allows PHP to be embedded in HTML documents.
+
+Token- A token is the smallest element of a php program that is meaningful to the language.
+
+Variables-
+        Variables in PHP are represented by a dollar sign followed by the name of the variable. The variable name is case-sensitive.
+        A valid variable name starts with a letter or underscore, followed by any number of letters, numbers, or underscores.
+        It is not necessary to initialize variables in PHP however it is a very good practice.
+        Uninitialized variables have a default value of their type depending on the context in which they are used.
+                example = int, float is zero, boolean is false.
+        
+        Assignment-
+                By Value - By default, variables are always assigned by value.
+                           Assigning one variable's value to another, changing one of those variables will have no effect on the other.
+                           Syntax = $val = $val1;
+
+                By Reference -  The new variable simply references (in other words, "becomes an alias for" or "points to") the original variable.
+                                Syntax = $val = &$val1;
+
+        Variable scope- 
+                -The scope of a variable is the context within which it is defined.
+                -PHP variables only have a single scope. This single scope spans included and required files as well.
+                -Any variable used inside a function is by default limited to the local function scope.
+                -In PHP global variables are not available in the Functions scope defined.
+                -In PHP global variables must be declared global inside a function if they are going to be used in that function.
+                    Syntax = global $a,$b;
+                    
+        Variables From External Sources-
+                -When a form is submitted to a PHP script, the information from that form is automatically made available to the script.
+                -Syntax
+                        echo $_POST['username'];
+                        echo $_REQUEST['username'];
+                
+Constant- 
+        -A constant is an identifier (name) for a simple value. As the name suggests, that value cannot change during the execution of the script.
+        -Constants may be defined and accessed anywhere without regard to variable scoping rules;
+        -Constants do not have a dollar sign ($) before them.
+        -Resolved at runtime
+        Types= 
+         const[keyword]= 
+                -Only scalar data (boolean, integer, float and string) can be contained in constants prior to PHP 5.6.
+                 From PHP 5.6 onwards, it is possible to define a constant as a scalar expression, and it is also possible to define an array constant.
+                -You can get the value of a constant by simply specifying its name.
+                -You can also use the function constant() to read a constant's value.
+                -syntax= const HELLo ='eo';
+
+         define()[function]= 
+                -Defines a named constant at runtime.
+                -syntax = bool define(name,parameter[scalar,array])
+                define("CONSTANT", "Hello world.");
+
+Expressions-
+        -The simplest yet most accurate way to define an expression is "anything that has a value". 
+        -The most basic forms of expressions are constants and variables.
+        -Functions are expressions with the value of their return value.
+
+Operators-
+        
+
+Output language construct
+        >echo
+          syntax  echo ( string $arg , string ...$args ) : void
+          -It is not actually a function (it is a language construct), so you are not required to use parentheses with it.
+          -Additionally, if you want to pass more than one parameter to echo, the parameters must not be enclosed within parentheses.
+          -Does not return value
+          -can accepts an argument list using , or .
+        >print
+          syntax   print ( string $arg ) : int
+          -print is not actually a real function (it is a language construct) so you are not required to use parentheses with its argument list.
+          -The major differences to echo are that print only accepts a single argument and always returns 1.
+
+File inclusion
+        >'require' and 'include' are use to include files.
+        >require is identical to include except upon failure it will also produce a fatal 
+          E_COMPILE_ERROR level error, it will halt the script whereas include only emits a warning (E_WARNING) which 
+          allows the script to continue.
+        >Syntax-
+                include/require 'file_path'
+        >When a file is included, the code it contains inherits the variable scope of the line on which the include occurs.
+          Any variables available at that line in the calling file will be available within the called file, from that point forward.
+          However, all functions and classes defined in the included file have the global scope.

@@ -1,0 +1,41 @@
+
+
+
+
+Token= A token is the smallest element of a php program that is meaningful to the language.
+
+Variables=  Variables in PHP are represented by a dollar sign followed by the name of the variable. The variable name is case-sensitive.
+            A valid variable name starts with a letter or underscore, followed by any number of letters, numbers, or underscores.
+            It is not necessary to initialize variables in PHP however it is a very good practice.
+            Uninitialized variables have a default value of their type depending on the context in which they are used
+
+    *Variable scope*= The scope of a variable is the context within which it is defined.
+                      In PHP global variables must be declared global inside a function if they are going to be used in that function.
+    *Predefined Variables* - PHP provides a large number of predefined variables to all scripts.
+    *Variables From External Sources* - When a form is submitted to a PHP script, the information from that form is automatically made available to the script.
+
+Constant=   A constant is an identifier (name) for a simple value.
+            A constant is case-sensitive by default. By convention, constant identifiers are always uppercase. 
+            A valid constant name starts with a letter or underscore, followed by any number of letters, numbers, or underscores.
+
+    >scalar types: Stores only single value of the particular type
+        boolean -   A boolean expresses a truth value. It can be either TRUE or FALSE.
+                    NO default value.
+        integer -   Integers can be specified in decimal (base 10), hexadecimal (base 16), octal (base 8) or binary (base 2) notation. 
+                    If PHP encounters a number beyond the bounds of the integer type, it will be interpreted as a float instead                    
+                    When converting from float to integer, the number will be rounded towards zero. 
+        float(aka double)-  The size of a float is platform-dependent, although a maximum of approximately 1.8e308 with a precision of roughly 14 decimal digits is a common value 
+                            To test floating point values for equality, an upper bound on the relative error due to rounding is used. This value is known as the machine epsilon.
+        string -    A string is series of characters, where a character is the same as a byte.
+                    PHP only supports a 256-character set.
+            Syntax -
+                    Single quote ('') - special characters will not be expanded when they occur in single quoted strings such as escape squences and variables.
+    >compound types:
+    >Special types:
+
+
+Output Statements-
+    >echo = echo ( string $arg1 [, string $... ] ) : void  |  echo "string $arg1 [, string $... ]" : void
+            echo is not actually a function (it is a language construct), so you are not required to use parentheses with it.
+            The major differences to print are that echo accepts an argument list and doesn't have a return value. 
+            
